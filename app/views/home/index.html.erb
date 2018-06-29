@@ -1,0 +1,82 @@
+<div id="container">
+    <div class="container-1">    
+        <div class="nav">
+            <div class="nav-inner">
+                <h1>HANCO</h1>
+                <ul>
+                    <li class="nav-inner-menu back-to-top"><%=link_to '첫 화면', '#' %></li>
+                    <li class="nav-inner-menu clk-no2"><%=link_to '소 개'%></li>
+                    <li class="nav-inner-menu clk-no3"><%=link_to '문 의'%></li>
+                    <li class="nav-inner-menu"><%=link_to '게시판'%></li>
+
+                    <li class="nav-inner-btn"><%=link_to do %><button class="btn btn-default">Log In</button><%end%></li>
+                    <li class="nav-inner-btn"><%=link_to new_user_path do %><button class="btn btn-primary">Sign UP</button><%end%></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-2">
+        <div class="section">
+            <div class="section-inner" id="introduce">
+                <div class="section-inner-vertical-grid">
+                    <div class="index-section-horizon-1">
+                        <%= image_tag('monitor01.jpg') %>
+                    </div>
+                    <div class="index-section-horizon-2">
+                        <div class="index-section-content">
+                            <span>자유로운 <p style="color: #AC58FA; display: inline;">Plannig</p>과</span><br>
+                            <span>달성률 확인!!</span><br><br><br><br>
+                            <p style="font-family: 'Jua', sans-serif; font-size: 20px;">그 놀라운 경험을 HANCO와 함께해 보세요</p>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            <div class="section-inner-2">
+                <div class="section-inner-2-horizon-grid">
+                    <div class="section-inner-2-vertical01">
+                        <%= image_tag('monitor02.png') %>
+                    </div>
+                    <div class="section-inner-2-vertical02">
+                        <div class="section-inner-2-content-grid">
+                            <span class="section-inner-2-content01">개인 프로젝트와 팀 프로젝트까지</span><br>
+                            <div section-space-co></div>
+                            <span class="section-inner-2-content02">
+                                <p>HANCO</p>의 편리함을 느껴보세요
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <h3>HANCO</h3>
+            <p>Copyright : HandlingCode(HANCO)_박준영</p>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(window).scroll(function() {
+    if($(this).scrollTop() < 70)
+        $('.nav').css('background-color', 'transparent'),
+        $('.nav h1').css('color', 'black'),
+        $('.nav-inner a').css('color', '#0489B1');
+    else
+        $('.nav').css('background-color', '#585858'),
+        $('.nav h1').css('color', '#81F781'),
+        $('.nav-inner a').css('color', 'white'),
+        $('.nav-inner a:hover').css('color', '#81BEF7');
+});
+
+    $('.back-to-top').on('click', function(){
+        //smooth scroll plug in start
+        $.smoothScroll({
+            easing: 'easeOutExpo', //이징 종류
+            speed: 5000 //소요시간
+        });
+    });
+</script>
+

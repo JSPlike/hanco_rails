@@ -1,0 +1,50 @@
+$font-weight: bold; 
+
+body {
+  width: 100%;
+  height: 800px;
+}
+section {
+  width: 100%;
+  height: 79%;
+  margin-top: 50px;
+  padding-bottom: auto;
+}
+.section-form span {
+  font-weight: $font-weight;
+  font-size: 35px;
+}
+.section-wrap {
+  width: 800px;
+  height: 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.section-form {
+  width: auto;
+  height: 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.signup-form label {
+  font-size: 25px;
+  display: block;
+}
+.signup-form input {
+  width: 100%;
+  height: 50px;
+  background-color: #E6E6E6;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.space-co {
+  margin-top: 20px;
+}
+footer {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  height: 20%;
+}
