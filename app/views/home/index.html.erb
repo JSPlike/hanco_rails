@@ -4,24 +4,24 @@
             <div class="navbar-collapse collapse nav-inner-hc">
                 <h1>HANCO</h1>
                 <ul class="nav navbar-nav nav-inner-hc-ul-1">
-                    <li class="active"><%=link_to '첫 화면', 'root_path' %></li>
+                    <li class="active"><%=link_to '첫 화면', "/" %></li>
                     <li><%=link_to '소 개', "#" %></li>
                     <li><%=link_to '문 의', "#" %></li>
-                    <li><%=link_to '게시판', "#" %></li>
+                    <li><%=link_to '게시판', "/posts" %></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right nav-inner-hc-ul-2">
                     <% if user_signed_in? %>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><%= link_to "My Profile", edit_user_registration_path %></li>
-                          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+                          <li><%= link_to "내 프로필", edit_user_registration_path %></li>
+                          <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
                         </ul>
                       </li>
                     <% else %>
-                      <li><%= link_to "Sign in", new_user_session_path %></li>
-                      <li><%= link_to "Sign up", new_user_registration_path %></li>
+                      <li><%= link_to "로그인", new_user_session_path %></li>
+                      <li><%= link_to "회원가입", new_user_registration_path %></li>
                     <% end %>
                 </ul>
             </div>
@@ -76,12 +76,12 @@
         $('.nav-hc').css('background-color', 'transparent'),
         $('.nav-hc h1').css('color', 'black'),
         $('.nav-inner-hc-ul-1 a').css('color', '#0489B1'),
-        $('.nav-inner-hc-ul-2 a').css('color', '#0489B1'),
+        $('.nav-inner-hc-ul-2 a').css('color', '#8258FA'),
         $('.nav-hc').css('opacity', '1');
     else
         $('.nav-hc').css('background-color', '#585858'),
         $('.nav-hc h1').css('color', '#81F781'),
-        $('.nav-inner-hc a').css('color', 'white'),
+        $('.nav-inner-hc a').css('color', '#2E2E2E'),
         $('.nav-inner-hc-u1-1 a:hover').css('color', 'black'),
         $('.nav-inner-hc-u1-2 a:hover').css('color', 'black'),
         $('.nav-hc').css('opacity', '.9');
