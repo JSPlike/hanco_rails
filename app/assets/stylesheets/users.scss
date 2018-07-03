@@ -1,9 +1,42 @@
-$font-weight: bold; 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*
+*= require_tree .
+*= require_self
+*/ 
+
+
+
+/*costomizing*/
 
 body {
+  padding-top: 50px;
   width: 100%;
-  height: 800px;
+  height: 100%;
+  background-color: #F2F2F2;
 }
+.login-form-hc {
+  width: 40%;
+  height: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: 1px solid #D8D8D8;
+  background-color: white;
+}
+h2 {
+  font-family: 'Do Hyeon', sans-serif;
+  color: #2E64FE;
+  font-weight: bold;
+}
+label {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
 section {
   width: 100%;
   height: 79%;
@@ -11,7 +44,7 @@ section {
   padding-bottom: auto;
 }
 .section-form span {
-  font-weight: $font-weight;
+  font-weight: bold;
   font-size: 35px;
 }
 .section-wrap {
