@@ -1,10 +1,7 @@
+$dropdown-menu:min-width(100px);
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-/*
-*= require_tree .
-*= require_self
-*/
 
 body {
     margin: 0px;
@@ -82,13 +79,34 @@ body {
 .nav-inner-hc-ul-2 a {
     font-family: 'Do Hyeon', sans-serif;
     text-decoration: none;
-    font-size: 18px;
-    color: #8258FA;
+    font-size: 21px;
+    color: #FA5882;
 }
+.signup-btn-color-hc-1 a {
+    color: #FA5882;
+}
+.signup-btn-color-hc-2 a {
+    color: #2E64FE;
+}
+.nav-inner-hc-ul-2 size-hc {
+    width: 90px;
+    height: 93px;
+}
+.nav-inner-hc-ul-2 .dropdown-menu a {
+    font-size: 15px;
+}
+.nav-inner-hc-ul-2 .project-a-color a {
+    color: #04B486;
+}
+
+
+
 .nav-inner-hc-ul-1 a:hover {
 	color: black;
     background-color: none;
 }
+
+
 .nav-inner-btn {
 	font-family: 'Do Hyeon', sans-serif;
 	float: right;
@@ -217,3 +235,6 @@ section part
 	color: #8181F7;
 	display: inline-block;
 }
+
+
+
