@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-
+  #projects 경로
+  resources :projects
+  
   #posts 경로
   resources :posts
   

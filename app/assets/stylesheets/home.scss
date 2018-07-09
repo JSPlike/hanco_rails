@@ -1,12 +1,10 @@
-$dropdown-menu:min-width(100px);
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
     margin: 0px;
     padding: 0px;
-    
+
 }
 #container {
     width: 100%;
@@ -18,8 +16,8 @@ body {
 	height: 750px;
 	margin-top: -70px;
 	background-image: url('bg-team.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 750px;
+  background-repeat: no-repeat;
+  background-size: 100% 750px;
 }
 /* 상단 네비 소스 */
 
@@ -133,8 +131,8 @@ body {
     font-size: 15px;
     margin-top: 5px;
 }
-/* 
-section part 
+/*
+section part
 */
 
 /* section part1 */
@@ -235,6 +233,3 @@ section part
 	color: #8181F7;
 	display: inline-block;
 }
-
-
-
