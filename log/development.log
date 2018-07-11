@@ -29604,3 +29604,32 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 129ms (Views: 126.5ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/projects" for 127.0.0.1 at 2018-07-11 14:14:57 +0900
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (undefined method `protect_form_forgery' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/projects_controller.rb:1:in `<main>'
+Started GET "/projects" for 127.0.0.1 at 2018-07-11 14:15:30 +0900
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/projects
+  Rendered projects/index.html.erb within layouts/projects (0.4ms)
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/layouts/projects.html.erb:41
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 46.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar' for #<User:0x00007fbb214f5ae0>):
+    55:       </li>
+    56:       <li class="nav-item">
+    57:         <div class="card user-info">
+    58:           <% unless current_user.avatar.url.nil? %>
+    59:           <div class="card-image">
+    60:             <img src="<%= current_user.avatar.url %>" />
+    61:           </div>
+  
+app/views/layouts/projects.html.erb:58:in `_app_views_layouts_projects_html_erb___3188216160836941202_70220767325260'
