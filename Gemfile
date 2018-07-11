@@ -31,8 +31,10 @@ gem 'simple_form'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# 이미지 업로드 젬
+# 이미지 업로드
 gem 'carrierwave'
+# 이미지 사이즈 조정 젬
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
