@@ -1,3 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nav .project-a-color a {
+  color: #04B486;
+}
+.nav .dropdown a:hover{
+  font-weight: bold;
+  color: #2E64FE;
+}
+.right-hc {
+  float: right;
+}
