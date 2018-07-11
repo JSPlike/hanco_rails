@@ -31,6 +31,9 @@ gem 'simple_form'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# 머테리얼 css 프레임워크 젬
+gem 'materialize-sass'
+
 # 이미지 업로드
 gem 'carrierwave'
 # 이미지 사이즈 조정 젬

@@ -1,9 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "materialize";
 
 body {
-  padding: 3em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 10%;
+  padding-right: 10%;
   background-color: #fff;
   color: #333;
   margin: 33px;
@@ -86,4 +89,10 @@ div {
 
 label {
   display: block;
+}
+
+.card-title p {
+  margin-top: 10px; 
+  font-weight: bold;
+  font-size: 30px;
 }

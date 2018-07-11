@@ -1,35 +1,64 @@
 <p id="notice"><%= notice %></p>
 
-<h1>자유게시판</h1>
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scpe="col">#</th>
-      <th scope="col">이름</th>
-      <th scope="col">제목</th>
-      <th scope="col">내용</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<!--
+<div class="container">
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <th scope="row"><%= post.id %></th>
-        <td><%= current_user.name %></td>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to '자세히', post %></td>
-        <td><%= link_to '수정', edit_post_path(post) %></td>
-        <td><%= link_to '삭제', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="card">
+    <div class="card-header">자유게시판</div>
+    <div class="card-body">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scpe="col">#</th>
+            <th scope="col">이름</th>
+            <th scope="col">제목</th>
+            <th scope="col">내용</th>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
 
-<br>
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <th scope="row"><%= post.id %></th>
+              <td><%= current_user.name %></td>
+              <td><%= post.title %></td>
+              <td><%= post.content %></td>
+              <td><%= link_to '자세히', post %></td>
+              <td><%= link_to '수정', edit_post_path(post) %></td>
+              <td><%= link_to '삭제', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<%= link_to new_post_path do %>
-  <button class="btn btn-success">새 글쓰기</button>
-<% end %>
+-->
+  <% @posts.each do |post| %>
+  <div class="card">
+    <div class="row">
+      <div class="card-content">
+        <span class="card-title"><%= post.user.name %></span>
+        <span><%= post.created_at %></span>
+        <p><%= post.content %></p>
+      <div class="card-action">
+        <a href="#">좋아요</a>
+        <a href="#">댓글 달</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+
+
+
+
+
+
+  <br>
+  <%= link_to new_post_path do %>
+    <button class="btn btn-success">새 글쓰기</button>
+  <% end %>
+</div>
