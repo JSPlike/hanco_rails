@@ -29633,3 +29633,30 @@ ActionView::Template::Error (undefined method `avatar' for #<User:0x00007fbb214f
     61:           </div>
   
 app/views/layouts/projects.html.erb:58:in `_app_views_layouts_projects_html_erb___3188216160836941202_70220767325260'
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT GET_LOCK('1489833708468185535', 0)[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddImageToUsersAndPosts (20180711054052)
+  [1m[35m (175.7ms)[0m  [1m[35mALTER TABLE `users` ADD `avatar` varchar(255)[0m
+  ↳ db/migrate/20180711054052_add_image_to_users_and_posts.rb:3
+  [1m[35m (119.3ms)[0m  [1m[35mALTER TABLE `posts` ADD `image` varchar(255)[0m
+  ↳ db/migrate/20180711054052_add_image_to_users_and_posts.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180711054052')[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (12.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('1489833708468185535')[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/joonyoung/.rbenv/versions/2.5.1/bin/rake:23
