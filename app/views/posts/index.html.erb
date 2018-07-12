@@ -9,10 +9,12 @@
     <div class="card-content">
       <span class="card-title"><%= post.user.name %></span>
       <span><%= post.created_at %></span>
+      <hr>
       <p><%= post.content %></p>
+      <br>
       <div class="card-image">
-        <% if post.image.url %>
-          <img src="<%= post.image.url %>">
+        <% if post.image %>
+          <img src="<%= post.image %>" style="width: 520px; height: auto">
         <% end %>
       </div>
       <div class="card-action">

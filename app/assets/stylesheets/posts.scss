@@ -78,13 +78,25 @@ label {
   display: block;
 }
 
-.card-title p {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 30px;
+.card {
+  .card-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+  }
 }
 .btn-size-hc {
   width: 300px;
   margin-left: 35%;
   margin-right: 30%;
+}
+
+.card {
+  .card-content  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
 }
