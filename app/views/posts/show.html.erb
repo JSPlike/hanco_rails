@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <strong>Content:</strong>
+  <%= @post.content %>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @post.content %>
+  <strong>Image:</string>
+  <%= @post.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

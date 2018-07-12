@@ -1,21 +1,25 @@
 <div class="card col s12">
-  <div class="card-content">
-    <div class="card-title"><p>새 글 작성하기</p></div><br />
-      <%= simple_form_for @post, html: {multipart: true} do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="card-content" style="padding: 5em;">
+    <div class="card-title">
+      <p>New Post</p>
+    </div><br />
+    <%= simple_form_for @post, :html => { :multipart => true} do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-        <div class="form-inputs">
-          <%= f.input :title, placeholder: "글 제목을 적어주세요.."%>
-          <%= f.input :content, class: "materialize-textarea", placeholder: "이야기를 적어주세요.."%>
-          <%= f.label "Image" %>
-          <%= f.file_field :image %>
-        </div><br>
+      <div class="form-inputs">
+        <%= f.input :content, class: "materialize-textarea", placeholder: "이야기를 적어주세요.."%>
+      </div><br>
 
-        <div class="form-actions">
-          <%= f.button :submit, class: "btn btn-success" %>
-        </div><br>
+      <div class="form-intpus">
+        <%= f.label "Image" %>
+        <%= f.file_field :image %>
+      </div><br>
 
-      <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-success" %>
+      </div><br>
+
+    <% end %>
     </div>
 </div>
