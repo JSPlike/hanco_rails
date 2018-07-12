@@ -1,17 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "materialize";
+// @import "materialize";
 
 .nav .project-a-color a {
   color: #04B486;
+}
+.nav a {
+  font-weight: bold;
 }
 .nav .dropdown a:hover{
   font-weight: bold;
   color: #2E64FE;
 }
-.right-hc {
-  float: right;
-}
+
 .user-info.card {
   p {
     margin: 12px 0;
@@ -25,5 +26,22 @@
     .content {
       margin: 20px 0;
     }
+  }
+}
+
+.grid-hc {
+  .nav-item {
+    float: right;
+  }
+}
+.nav{
+  .dropdown {
+    float: right;
+  }
+}
+.nav {
+  .dropdown ul {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

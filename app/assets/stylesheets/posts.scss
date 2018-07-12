@@ -27,19 +27,6 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
 th {
   padding-bottom: 5px;
 }
@@ -92,7 +79,12 @@ label {
 }
 
 .card-title p {
-  margin-top: 10px; 
+  margin-top: 10px;
   font-weight: bold;
   font-size: 30px;
+}
+.btn-size-hc {
+  width: 300px;
+  margin-left: 35%;
+  margin-right: 30%;
 }

@@ -1,7 +1,7 @@
 <div class="signup-form-hc">
   <%= link_to '/'  do %>
       <button class="btn btn-info">홈으로</button>
-  <% end %>
+  <% end %><br \>
   <h2>Sign up</h2>
 
   <p class="notice"><%= notice %></p>
@@ -11,9 +11,9 @@
     <%= f.error_notification %>
 
     <div class="field">
-      <%= f.label :avatar %><br />
+      <%= f.label "프로필 사진" %><br />
       <%= f.file_field :avatar %>
-    </div>
+    </div><br>
 
     <div class="form-inputs">
       <%= f.input :name, label: 'Username', required: true, autofocus: true, placeholder: 'username' %>
