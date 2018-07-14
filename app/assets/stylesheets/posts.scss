@@ -103,3 +103,14 @@ label {
     font-size: 18px;
   }
 }
+
+.post {
+  .card-content {
+    .thumbnail {
+      vertical-align: middle;
+    }
+    .content {
+      margin: 20px 0;
+    }
+  }
+}
