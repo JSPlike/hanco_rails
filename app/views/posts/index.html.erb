@@ -3,34 +3,9 @@
   <button class="btn btn-success btn-size-hc">새 글쓰기</button>
 <% end %><br>
 
-<% @posts.reverse.each do |post| %>
-<div class="card post">
-  <div class="card-content">
-    <% if post.user.avatar %>
-      <img class="circle thumbnail" src="<% post.user.avatar.thumb.url %>" />
-    <% end %>
-    <span class="card-title" style="display: inline; margin-right: 5px;"><%= post.user.name %></span>
-    <span><%= post.created_at %></span>
-    <div class="content">
-      <hr>
-      <p class="pre-line"><%= post.content %></p>
-      <br>
-      </div>
-    <div class="card-image">
-      <% if post.image.url %>
-        <img src="<%= post.image.url %>" style="width: 380px; height: auto">
-      <% end %>
-    </div>
-
-    <div class="card-action">
-      <a href="#">좋아요</a>
-      <!-- 유저값을 확인하여 게시판을 쓴 유저라면 수정, 삭제버튼 확인 가능-->
-      <% if current_user.id == post.user.id %>
-        <%= link_to "삭제", post_path(post), method: "delete", class: "right" %>
-        <%= link_to "수정", edit_post_path(post), class: "right" %>
-      <% end %>
-      <a href="#">댓글 달기</a>
-    </div>
-  </div>
+<div class="col s12 m8">
+  <!-- _post.html.erb에 partial -->
+  <% @posts.reverse.each do |post| %>
+    <%= render partial: "post", object: "post" %>
+  <% end %>
 </div>
-<% end %>
