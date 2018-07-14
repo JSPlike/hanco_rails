@@ -1,11 +1,20 @@
 <p id="notice"><%= notice %></p>
+
 <%= link_to new_post_path do %>
   <button class="btn btn-success btn-size-hc">새 글쓰기</button>
 <% end %><br>
 
+<div class="card user-info">
+  <% unless current_user.avatar.url.nil? %>
+  <div class="card-image">
+    <img src="<%= current_user.avatar.url %>" />
+  </div>
+  <% end %>
+</div>
+
 <div class="col s12 m8">
   <!-- _post.html.erb에 partial -->
   <% @posts.reverse.each do |post| %>
-    <%= render partial: "post", object: "post" %>
+    <%= render partial: "post", locals: { post: post } %>
   <% end %>
 </div>
