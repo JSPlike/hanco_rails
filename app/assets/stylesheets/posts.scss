@@ -5,8 +5,8 @@
 body {
   padding-top: 3em;
   padding-bottom: 3em;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
   background-color: #fff;
   color: #333;
   margin: 33px;
@@ -43,6 +43,7 @@ div {
 
 #notice {
   color: green;
+  text-align: center;
 }
 
 .field_with_errors {
@@ -59,7 +60,7 @@ div {
   background-color: #f0f0f0;
 
   h2 {
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
@@ -82,17 +83,26 @@ label {
   height: auto;
 }
 .card {
+  .my-profil-hc{
+    text-align: center;
+
+    span {
+      font-family: 'Do Hyeon', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+}
+
+
+.card {
   .card-title {
     margin-top: 10px;
     font-weight: bold;
     font-size: 15px;
   }
 }
-.btn-size-hc {
-  width: 300px;
-  margin-left: 35%;
-  margin-right: 30%;
-}
+
 
 .card {
   .card-content  p {
@@ -104,6 +114,10 @@ label {
   }
 }
 
+.btn-newpost-hc {
+  width: 100%;
+  margin-top: 10px;
+}
 .post {
   .card-content {
     .thumbnail {
@@ -113,4 +127,8 @@ label {
       margin: 20px 0;
     }
   }
+}
+.my-profil-hc {
+  width: 20em;
+  height: auto;
 }

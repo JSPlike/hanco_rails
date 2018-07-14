@@ -6,6 +6,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_limit => [32, 32]
   end
+  
+  version :profil do
+    process :resize_to_limit => [260, 260]
+  end
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog

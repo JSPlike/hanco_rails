@@ -1,7 +1,10 @@
 <div class="card post">
   <div class="card-content">
     <% if post.user.avatar %>
-      <img class="circle thumbnail" src="<% post.user.avatar.thumb.url %>" />
+      <img class="circle thumbnail" src="<% post.user.avatar.thumb.url %>" style="display: inline;"/>
+    <% else %>
+    <!-- 수정하자 -->
+      <%= image_tag('basic_img.png')%>
     <% end %>
     <span class="card-title" style="display: inline; margin-right: 5px;"><%= post.user.name %></span>
     <span><%= post.created_at %></span>

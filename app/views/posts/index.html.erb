@@ -1,15 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to new_post_path do %>
-  <button class="btn btn-success btn-size-hc">새 글쓰기</button>
-<% end %><br>
-
-<div class="card user-info">
-  <% unless current_user.avatar.url.nil? %>
-  <div class="card-image">
-    <img src="<%= current_user.avatar.url %>" />
+<div class="card" style="width: 20em; margin-left: auto; margin-right: auto;">
+  <div class="my-profil-hc">
+    <% unless current_user.avatar.url.nil? %>
+    <div class="card-image">
+      <img src="<%= current_user.avatar.url %>"  style="width: 20em; height: auto;"/>
+    </div>
+    <% end %>
+    <br>
+    <span><%= current_user.name %>님의 프로필</span>
+    <!-- New Post 버튼-->
+    <br>
+    <div class="btn-newpost-hc">
+      <%= link_to new_post_path do %>
+        <button class="btn btn-success" style="width: 100%;">새 글쓰기</button>
+      <% end %>
+    </div>
   </div>
-  <% end %>
 </div>
 
 <div class="col s12 m8">
