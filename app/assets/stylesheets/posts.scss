@@ -1,3 +1,4 @@
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "materialize";
@@ -117,6 +118,9 @@ label {
 .btn-newpost-hc {
   width: 100%;
   margin-top: 10px;
+}
+.btn-homeAndpoject-hc {
+  width: 100%;
 }
 .post {
   .card-content {
