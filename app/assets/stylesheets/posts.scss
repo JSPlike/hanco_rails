@@ -122,6 +122,7 @@ label {
 .btn-homeAndpoject-hc {
   width: 100%;
 }
+
 .post {
   .card-content {
     .thumbnail {
@@ -135,4 +136,20 @@ label {
 .my-profil-hc {
   width: 20em;
   height: auto;
+}
+
+.btn-hc-1 {
+  width: 100%;
+  display: inline-block;
+  background-color: #FFBF00;
+}
+.btn-newpost-hc a {
+  :hover {
+    filter: brightness(95%);
+  }
+}
+.btn-homeAndpoject-hc a {
+  :hover {
+    filter: brightness(95%);
+  }
 }
