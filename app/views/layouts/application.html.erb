@@ -20,8 +20,12 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Jquery 사용-->
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
+    <div id="load">
+    	<%= image_tag('loding.gif') %>
+    </div>
     <%= yield %>
   </body>
 </html>

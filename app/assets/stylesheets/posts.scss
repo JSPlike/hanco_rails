@@ -76,6 +76,30 @@ div {
   }
 }
 
+// 로딩화면 css
+
+#load {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	display: block;
+	opacity: 0.9;
+	background: white;
+	z-index: 9999;
+	text-align: center;
+}
+
+#load img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+//
+
 label {
   display: block;
 }
@@ -115,12 +139,9 @@ label {
   }
 }
 
-.btn-newpost-hc {
+.btn-homeAndproject-hc {
   width: 100%;
   margin-top: 10px;
-}
-.btn-homeAndpoject-hc {
-  width: 100%;
 }
 
 .post {
@@ -141,15 +162,11 @@ label {
 .btn-hc-1 {
   width: 100%;
   display: inline-block;
-  background-color: #FFBF00;
+  background-color: #FF8000;
 }
-.btn-newpost-hc a {
+
+.btn-homeAndproject-hc a {
   :hover {
-    filter: brightness(95%);
-  }
-}
-.btn-homeAndpoject-hc a {
-  :hover {
-    filter: brightness(95%);
+    filter: brightness(90%);
   }
 }

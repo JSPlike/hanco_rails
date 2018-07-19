@@ -10,18 +10,17 @@
       <span><%= current_user.name %>님의 프로필</span>
       <!-- New Post 버튼-->
       <br>
-      <div class="btn-newpost-hc">
+      <div class="btn-homeAndproject-hc">
         <%= link_to new_post_path do %>
-          <button class="btn btn-raised btn-success" style="width: 100%;">새 글쓰기</button>
+          <button class="btn btn-success btn-hc-1">새 글쓰기</button>
         <% end %>
-      </div>
-      <div class="btn-homeAndpoject-hc">
+
         <%= link_to root_path do %>
-          <button class="btn btn-raised btn-warning" style="width: 100%; display: inline-block; background-color: #FFBF00;">홈으로</button>
+          <button class="btn btn-warning btn-hc-1">홈으로</button>
         <% end %>
 
         <%= link_to projects_path do %>
-          <button class="btn btn-raised btn-primary" style="width: 100%; display: inline-block;">내 프로젝트</button>
+          <button class="btn btn-primary btn-hc-1">내 프로젝트</button>
         <% end %>
       </div>
     </div>
