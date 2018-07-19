@@ -31,21 +31,13 @@
     <script>
       $(document).ready(function(){
         // hide spinner
-        $(document).ajaxStart(function(){
-            $("#load").fadeOut();
-            setTimeout(function(){
-                $loading.fadeOut();
-            },2000);
-        });
+
+        $("#load").fadeOut();
+        setTimeout(function(){
+            $loading.hide();
+        },1000);
         // show spinner on AJAX start
-        $(document).ajaxStart(function(){
-            $("#load").show();
-        }).ajaxComplete(function() {
-            var $loading = $("#load");
-            setTimeout(function(){
-                $loading.fadeOut();
-            },2000);
-        });
+
       });
     </script>
   </body>
