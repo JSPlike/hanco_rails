@@ -23,46 +23,48 @@
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
-    <ul class="nav nav-tabs grid-hc">
-      <li class="nav-item" style="float: left;">
-        <a href="/"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true">홈으로</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">프로필 파트</a>
-      </li>
-
-      <% if user_signed_in? %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> 님 안녕하세요<b class="caret"></b></a>
-          <ul class="dropdown-menu size-hc">
-            <li class="project-a-color"><%= link_to "새 프로젝트", "/projects"%></li>
-            <li><%= link_to "정보수정", edit_user_registration_path %></li>
-            <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
-          </ul>
+    <div style="background-color: #084B8A">
+      <ul class="nav nav-tabs grid-hc">
+        <li class="nav-item" style="float: left;">
+          <a href="/"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true">홈으로</span></a>
         </li>
-      <% else %>
-        <li class="signup-btn-color-hc-1">
-          <%= link_to "Log In", new_user_session_path %>
-        </li>
-        <li class="signup-btn-color-hc-2">
-          <%= link_to "Sign Up", new_user_registration_path %>
-        </li>
-      <% end %>
 
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="#">프로필 파트</a>
+        </li>
+
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> 님 안녕하세요<b class="caret"></b></a>
+            <ul class="dropdown-menu size-hc">
+              <li class="project-a-color"><%= link_to "새 프로젝트", "/projects"%></li>
+              <li><%= link_to "정보수정", edit_user_registration_path %></li>
+              <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="signup-btn-color-hc-1">
+            <%= link_to "Log In", new_user_session_path %>
+          </li>
+          <li class="signup-btn-color-hc-2">
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+        <% end %>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
     <div class="project-inner-hc">
       <h2 style="font-family: 'Jua', sans-serif;">프로젝트 이름이 들어갈 자리</h2>
       <ul class="nav nav-tabs">
