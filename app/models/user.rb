@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
+  has_many :comments
   # 어떤것을 통해 like 값을 가져오는지 명시해줘야한다 through: :likes
   # 그게 source: ...
   has_many :liked_posts, through: :likes, source: :post

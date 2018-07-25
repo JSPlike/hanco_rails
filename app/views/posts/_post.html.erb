@@ -43,6 +43,21 @@
           <%= button_tag "댓글 달기", class: 'btn-primary btn', style: "background-color: #04B486;"%>
         </div>
       <% end %>
+      <% if post.comments.present?%>
+        <ul class="collection">
+          <% post.comments.each do |c| %>
+            <li class="collection-item">
+              <span class="title"><%= c.user.name%></span>
+              <span class="right"><%= c.created_at%></span>
+              <p><%= c.content %></p>
+              <% if c.user.id == current_user.id %>
+                <div><%= link_to "삭제", post_comment_path(post, c), method: "delete" %>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>
