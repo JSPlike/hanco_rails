@@ -34,7 +34,15 @@
         <%= link_to "삭제", post_path(post), method: "delete", class: "right" %>
         <%= link_to "수정", edit_post_path(post), class: "right" %>
       <% end %>
-      <a href="#">댓글 달기</a>
+
+      <%= form_tag post_comments_path(post) do %>
+        <div class="input-field">
+          <%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "댓글을 작성해주세요.", required: true %>
+        </div>
+        <div class="input-field">
+          <%= button_tag "댓글 달기", class: 'btn-primary btn', style: "background-color: #04B486;"%>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

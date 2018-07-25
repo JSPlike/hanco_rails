@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   #posts 경로
   resources :posts, except: [:show] do
     post "/like", to: "likes#like_toggle"
+
+    #댓글기능 라우팅
+    #post에 속한 라우팅 기능으므로 여기에 적어준다
+    resources :comments, only: [:create, :destroy]
   end
 
   #루트 경로
