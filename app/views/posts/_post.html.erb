@@ -43,16 +43,19 @@
           <%= button_tag "댓글 달기", class: 'btn-primary btn', style: "background-color: #04B486;"%>
         </div>
       <% end %>
+      <hr>
       <% if post.comments.present?%>
-        <ul class="collection">
-          <% post.comments.each do |c| %>
+        <ul class="">
+          <% post.comments.reverse.each do |c| %>
             <li class="collection-item">
-              <span class="title"><%= c.user.name%></span>
+              <span class="title" style="font-weight: bold; color: #5882FA;"><%= c.user.name%></span>
               <span class="right"><%= c.created_at%></span>
-              <p><%= c.content %></p>
+              <p style="font-size: 21px; font-family: 'Nanum Pen Script', cursive;"><%= c.content %></p>
               <% if c.user.id == current_user.id %>
-                <div><%= link_to "삭제", post_comment_path(post, c), method: "delete" %>
-                </div>
+                <div style="display: inline; float: right">
+                  <%= link_to "삭제", post_comment_path(post, c), method: "delete" %>
+                </div><br>
+                <hr>
               <% end %>
             </li>
           <% end %>
