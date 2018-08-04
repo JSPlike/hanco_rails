@@ -167,11 +167,11 @@ label {
 .btn-hc-1 {
   width: 100%;
   display: inline-block;
-  background-color: #FF8000;
+  background-color: #29088A;
+  color: #BDBDBD;
 }
-
-.btn-homeAndproject-hc a {
-  :hover {
-    filter: brightness(90%);
-  }
+.btn-hc-1:hover {
+  background-color: #086A87;
+  color: white;
+  font-weight: bold;
 }
