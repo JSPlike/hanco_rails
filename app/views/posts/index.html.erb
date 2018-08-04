@@ -1,36 +1,37 @@
-<div class="card" style="width: 20em; margin-left: auto; margin-right: auto;">
-  <div class="card-img-top my-profil-hc">
-    <% unless current_user.avatar.url.nil? %>
-    <div class="card-image">
-      <img src="<%= current_user.avatar.url %>"  style="width: 20em; height: auto;"/>
-    </div>
-    <% end %>
-    <br>
-    <div class="card-body">
-      <span><%= current_user.name %>님의 프로필</span>
-      <!-- New Post 버튼-->
+<div class="card-profil-hc">
+  <div class="card" style="width: 20em; display: inline-block;">
+    <div class="card-img-top my-profil-hc">
+      <% unless current_user.avatar.url.nil? %>
+      <div class="card-image">
+        <img src="<%= current_user.avatar.url %>"  style="width: 20em; height: auto;"/>
+      </div>
+      <% end %>
       <br>
-      <div class="btn-homeAndproject-hc">
-        <%= link_to new_post_path do %>
-          <button class="btn btn-success btn-hc-1">새 글쓰기</button>
-        <% end %>
+      <div class="card-body">
+        <span><%= current_user.name %>님의 프로필</span>
+        <!-- New Post 버튼-->
+        <br>
+        <div class="btn-homeAndproject-hc">
+          <%= link_to new_post_path do %>
+            <button class="btn btn-success btn-hc-1">새 글쓰기</button>
+          <% end %>
 
-        <%= link_to root_path do %>
-          <button class="btn btn-warning btn-hc-1">홈으로</button>
-        <% end %>
+          <%= link_to root_path do %>
+            <button class="btn btn-warning btn-hc-1">홈으로</button>
+          <% end %>
 
-        <%= link_to projects_path do %>
-          <button class="btn btn-primary btn-hc-1">내 프로젝트</button>
-        <% end %>
+          <%= link_to projects_path do %>
+            <button class="btn btn-primary btn-hc-1">내 프로젝트</button>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+  <p id="notice"><%= notice %></p>
 </div>
 
-<p id="notice"><%= notice %></p>
 
-
-<div class="col s12 m8">
+<div class="col s12 m8" style="width: 70%; margin-left: 25%; display: inline-block;">
   <!-- _post.html.erb에 partial -->
   <% @posts.reverse.each do |post| %>
     <%= render partial: "post", locals: { post: post } %>

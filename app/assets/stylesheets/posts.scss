@@ -6,11 +6,9 @@
 body {
   padding-top: 3em;
   padding-bottom: 3em;
-  padding-left: 15%;
-  padding-right: 15%;
   background-color: #fff;
   color: #333;
-  margin: 33px;
+  margin: 23px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -106,6 +104,13 @@ label {
 .card {
   width: auto;
   height: auto;
+
+}
+.card-profil-hc {
+  position: fixed;
+  top: 3em;
+  left: 3em;
+  margin: 20px;
 }
 .card {
   .my-profil-hc{
