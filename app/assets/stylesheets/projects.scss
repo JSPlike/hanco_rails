@@ -1,10 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// @import "materialize";
 
-.nav .project-a-color a {
-  color: #04B486;
+.nav {
+  .project-a-color a {
+    color: #04B486;
+  }
 }
+
 .nav a {
   font-weight: bold;
 }
@@ -52,12 +54,6 @@
   color: #210B61;
 }
 
-.container {
-  background-color: #F2F2F2;
-  width: 92%;
-  height: 520px;
-
-}
 .project-list {
   width: 100%;
   height: 100%;
