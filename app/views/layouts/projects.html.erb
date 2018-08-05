@@ -68,7 +68,11 @@
       <br>
 
       <%= yield %>
-
+      <script>
+        $(function(){
+          $('#myTab a:first').tab('show')
+        })
+      </script>
     </div>
   </body>
 </html>
