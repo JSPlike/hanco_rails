@@ -48,7 +48,16 @@
   }
 }
 .project-nav-hc {
+  width: 100%;
   background-color: #084B8A;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+.project-container-hc {
+  margin-top: 42px;
+  z-index: 1;
 }
 .nav-title-hc {
   margin-top: 8px;
@@ -69,7 +78,7 @@
 }
 .project-tabs-inner-hc {
   width: 100%;
-  height: 600px;
+  height: 800px;
   background-color: #084B8A;
   margin-left: 0;
   margin-right: 0;
