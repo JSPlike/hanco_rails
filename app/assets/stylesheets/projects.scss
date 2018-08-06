@@ -79,7 +79,8 @@
 .project-tabs-inner-hc {
   width: 100%;
   height: 800px;
-  background-color: #084B8A;
+  background-color:
+#0063DC;
   margin-left: 0;
   margin-right: 0;
 }
@@ -87,18 +88,55 @@
   width: 100%;
   height: 100%;
   padding: 20px;
+  color: white;
 }
 .project-card-hc {
   width: 20rem;
-  height: 20rem;
-  text-align: center;
-  background-color: white;
-  border: 1px solid #D8D8D8;
+  height: auto;
+  background-color: #4E8DF5;
+  border: 1px solid #4E8DF5;
   border-radius: 4%;
   display: inline-block;
   float: left;
   padding: 10px 10px;
   margin: 10px;
+}
+
+.plan-box-hc {
+  height: 40px;
+  border-radius: 10%;
+  color: black;
+}
+
+
+.add-plan-button-hc {
+  width: 20rem;
+  height: auto;
+  background-color: #4E8DF5;
+  border-radius: 4%;
+  display: inline-block;
+  float: left;
+  padding: 10px 10px;
+  margin: 10px;
+  color: #0B614B;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Jua', sans-serif;
+}
+.add-plan-button-hc:hover {
+  background-color: #084B8A;
+  color: white;
+  opacity: 0.8;
+}
+
+.add-button-body-hc {
+  padding: 10px 30px 10px 30px;
+}
+.add-button-body-hc p {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: 5px;
 }
 
 .project-tabs-hc {
