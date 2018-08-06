@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,10 +24,14 @@
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
-    <div style="background-color: #084B8A">
+    <div class="project-nav-hc">
       <ul class="nav nav-tabs grid-hc">
         <li class="nav-item" style="float: left;">
           <a href="/"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true">홈으로</span></a>
+        </li>
+
+        <li class="nav-title-hc">
+          <span>HANCO</span>
         </li>
 
         <li class="nav-item">
@@ -66,13 +71,14 @@
       <br>
       <h2 style="font-family: 'Jua', sans-serif;">프로젝트 이름이 들어갈 자리</h2>
       <br>
-
+    </div>
       <%= yield %>
+
       <script>
         $(function(){
           $('#myTab a:first').tab('show')
         })
       </script>
-    </div>
+
   </body>
 </html>

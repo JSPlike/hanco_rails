@@ -47,13 +47,33 @@
     margin-right: auto;
   }
 }
-
+.project-nav-hc {
+  background-color: #084B8A;
+}
+.nav-title-hc {
+  margin-top: 8px;
+  font-weight:bold;
+  color: white;
+  padding: 0 320px 0 320px;
+  font-family: 'Courgette', cursive;
+  font-size: 20px;
+}
 .project-inner-hc {
   margin-left: 4%;
   margin-right: 4%;
   color: #210B61;
 }
-
+.project-tabs-section-hc {
+  margin-left: 4%;
+  margin-right: 4%;
+}
+.project-tabs-inner-hc {
+  width: 100%;
+  height: 600px;
+  background-color: #0080FF;
+  margin-left: 0;
+  margin-right: 0;
+}
 .project-list {
   width: 100%;
   height: 100%;
