@@ -1,20 +1,93 @@
-<div class="project-tabs-section-hc">
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item project-li-hc active">
-      <a class="nav-link project-tabs-hc" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">내 일정</a>
-    </li>
-    <li class="nav-item project-li-hc">
-      <a class="nav-link project-tabs-hc" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">성취도</a>
-    </li>
-    <li class="nav-item project-li-hc">
-      <a class="nav-link project-tabs-hc" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">멤버</a>
-    </li>
-    <li class="nav-item project-li-hc">
-      <a class="nav-link project-tabs-hc" id="contact-tab" data-toggle="tab" href="#file" role="tab" aria-controls="contact" aria-selected="false">파일 보냄</a>
-    </li>
-  </ul>
+
+<ul class="nav nav-pills mb-3 project-tabs-section-hc" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">내 일정</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">성취도</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">멤버</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">파일 보내기</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="pills-tabContent">
+  <div class="project-tabs-inner-hc">
+    <div class="tab-pane fade in active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="project-list">
+
+        <div class="card project-card-hc">
+          <div class="card-body">
+            <h4 class="card-title">오늘 할일</h4>
+            <div class="form-inputs">
+              <textarea class="plan-box-hc" placeholder="할일을 적어주세요.."></textarea>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <a href="#" class="card-link">Card link</a>
+          </div>
+        </div>
+
+        <div class="card project-card-hc">
+          <div class="card-body">
+            <h5 class="card-title">몇일 일정</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+
+        <div class="card project-card-hc">
+          <div class="card-body">
+            <h5 class="card-title">몇일 일정</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+
+        <a href="#">
+          <div class="card add-plan-button-hc">
+            <div class="card-body">
+              <div class="add-button-body-hc">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" style="display:inline-block"></span>
+                <p>Add Plan</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+  </div>
 </div>
 
+
+<!--
+<div class="project-tabs-section-hc">
+
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item active">
+      <a class="nav-link " id="pills-home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">내 일정</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">성취도</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#contact" role="tab" aria-controls="contact" aria-selected="false">멤버</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#file" role="tab" aria-controls="contact" aria-selected="false">파일 보냄</a>
+    </li>
+  </ul>
+
+</div>
+-->
+<!--
 <div class="tab-content" id="myTabContent">
   <div class="project-tabs-inner-hc">
     <div class="project-tabs1-hc tab-pane fade in active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -71,3 +144,5 @@
     </div>
   </div>
 </div>
+
+-->
