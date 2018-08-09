@@ -113,15 +113,32 @@
 }
 .add-description-hc {
   width: 100%;
-  height: 30px;
+  height: auto;
 
 }
 .add-description-hc:hover {
-  background-color: #848484;
+  background-color: #D8D8D8;
 }
-.add-description-hc p {
-  display: inline-block;
-  font-weight: bold;
+.card-footer {
+  a {
+    color: #2E9AFE;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #5858FA;
+  }
+}
+.add-description-hc  {
+  border-radius: 5px;
+
+  p {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0;
+  }
+  span  {
+      margin: 0 5px 0 5px;
+  }
 }
 
 
@@ -144,7 +161,7 @@
   width: 20rem;
   height: auto;
   background-color: #4E8DF5;
-  border-radius: 4%;
+  border-radius: 5px;
   display: table-cell;
   float: left;
   padding: 10px 10px;
