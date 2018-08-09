@@ -87,14 +87,14 @@
 }
 .project-tabs-inner-hc {
   width: 100%;
-  height: 700px;
+  height: 650px;
   background-color: #045FB4;
   margin-left: 0;
   margin-right: 0;
 }
 .project-list {
   width: 90%;
-  height: 100%;
+  height: auto;
   padding: 20px;
   padding-left: 5%;
   padding-right: 5%;
@@ -114,7 +114,6 @@
 .add-description-hc {
   width: 100%;
   height: auto;
-
 }
 .add-description-hc:hover {
   background-color: #D8D8D8;
@@ -144,6 +143,7 @@
 
 .card-body {
 }
+
 .card-title {
   color: black;
   font-weight: bold;
@@ -190,4 +190,14 @@
 
 .project-tabs-hc {
   color: #585858;
+}
+
+/*
+  멤버 관련 css
+*/
+.member-hc {
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
