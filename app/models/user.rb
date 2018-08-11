@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  has_many :projects
   # 좋아요를 얼마나 클릭하였는지 확인
   # present?는 안에 값이 있으면 true 없으면 false를 반환한다
   def is_like?(post)
