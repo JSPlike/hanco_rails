@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   #projects 경로
   resources :projects
 
+  
+  
   #posts 경로
   resources :posts, except: [:show] do
     post "/like", to: "likes#like_toggle"
