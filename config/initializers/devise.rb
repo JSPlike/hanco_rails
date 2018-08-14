@@ -10,6 +10,24 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '749f725e5c2816088442b802ccfa718fb3d4b47d3193945d2b51110a48947525da8d4468763873eee042a371235e97b746efac5ff93c8a23ce272c5991a51e67'
   
+  
+  #google A - joonyoung
+  #facebook A
+  #kakao A
+  
+  config.omniauth :google_oauth2,
+    ENV['Google_Key'],
+    ENV['Google_Secret']
+  
+  config.omniauth :facebook,
+    ENV["Facebook_Key"], ENV["Facebook_Secret"]
+  
+  config.omniauth :kakao,
+    ENV["Kakao_Key"], :redirect_path => "/users/auth/kakao/callback"
+  
+  
+  
+  
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'

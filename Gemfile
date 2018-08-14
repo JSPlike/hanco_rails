@@ -39,6 +39,16 @@ gem 'carrierwave'
 # 이미지 사이즈 조정 젬
 gem 'mini_magick'
 
+#구글 권한 가져오기
+gem 'omniauth-google-oauth2'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-kakao', :git => 'git://github.com/hcn1519/omniauth-kakao'
+
+# 계정 인증을 좀 더 안전하게
+gem 'figaro'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

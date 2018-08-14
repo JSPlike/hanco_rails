@@ -14,14 +14,18 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
 
+  
+  
+  
   #루트 경로
   root :to => "home#index"
 
   #devise 경로
-  devise_for :users,
-
-  #경로설정 costomizing
+  devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'},
+  
   path: 'users',
   path_name: {sign_in: 'login', sign_out: 'logout'}
+
+
 
 end
