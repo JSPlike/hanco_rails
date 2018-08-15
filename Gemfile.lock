@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/hcn1519/omniauth-kakao
-  revision: d9d1fae71b51e198df62e82e878fd417f6fe3cdb
-  specs:
-    omniauth-kakao (0.1.2)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -277,7 +269,6 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
-  omniauth-kakao!
   puma (~> 3.11)
   rails (~> 5.2.0)
   sass-rails (~> 5.0)

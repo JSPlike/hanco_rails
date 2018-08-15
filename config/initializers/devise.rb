@@ -16,15 +16,12 @@ Devise.setup do |config|
   #kakao A
   
   config.omniauth :google_oauth2,
-    ENV['Google_Key'],
-    ENV['Google_Secret']
+    ENV["Google_Key"],
+    ENV["Google_Secret"]
   
   config.omniauth :facebook,
-    ENV["Facebook_Key"], ENV["Facebook_Secret"]
-  
-  config.omniauth :kakao,
-    ENV["Kakao_Key"], :redirect_path => "/users/auth/kakao/callback"
-  
+    ENV["Facebook_Key"], 
+    ENV["Facebook_Secret"]
   
   
   

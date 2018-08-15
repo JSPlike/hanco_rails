@@ -44,7 +44,7 @@ gem 'omniauth-google-oauth2'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-kakao', :git => 'git://github.com/hcn1519/omniauth-kakao'
+
 
 # 계정 인증을 좀 더 안전하게
 gem 'figaro'

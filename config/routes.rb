@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
   
   
-  
   #루트 경로
   root :to => "home#index"
 
@@ -26,6 +25,9 @@ Rails.application.routes.draw do
   path: 'users',
   path_name: {sign_in: 'login', sign_out: 'logout'}
 
+  #register 경로
+  get 'register/info', to: 'register#info', as: 'register_info'
 
+  match '/profile/:id/finish_signup' => 'register#info', via: [:get, :patch], :as => :finish_signup
 
 end
