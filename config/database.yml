@@ -21,4 +21,4 @@ development:
 
 production:
   <<: *default
-  database: production_db_hanco
+  database: db_hanco

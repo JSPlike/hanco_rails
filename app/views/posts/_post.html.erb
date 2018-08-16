@@ -2,7 +2,7 @@
   <div class="card-content">
     <%= image_tag('basic_img.png')%>
     <span class="card-title" style="display: inline; margin-right: 5px; color: #FA5882;"><%= post.user.name %></span>
-    <span><%= post.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></span>
+    <span><%= post.created_at.strftime('%Y년 %m월 %d일 %H시 %M분') %></span>
     <div class="content">
       <hr>
       <p class="pre-line"><%= simple_format post.content %></p>
@@ -22,9 +22,15 @@
         <%= link_to "좋아요", post_like_path(post), method: "post" %>
       <% end %>
       <!-- 유저값을 확인하여 게시판을 쓴 유저라면 수정, 삭제버튼 확인 가능-->
+      <!--
       <% if current_user.id == post.user.id %>
         <%= link_to "삭제", post_path(post), method: "delete", class: "right" %>
         <%= link_to "수정", edit_post_path(post), class: "right" %>
+      <% end %>
+      -->
+      <% if user_signed_in? %>
+        <%= link_to icon('edit'), edit_post_path(post) if post.updatable_by? current_user %>&nbsp;
+        <%= link_to icon('trash'), post, method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
       <% end %>
 
       <%= form_tag post_comments_path(post) do %>
@@ -41,7 +47,7 @@
           <% post.comments.reverse.each do |c| %>
             <li class="collection-item">
               <span class="title" style="font-weight: bold; color: #5882FA;"><%= c.user.name%></span>
-              <span class="right"><%= c.created_at.strftime('%Y년 %m월 %d일 %H시%M분') %></span>
+              <span class="right"><%= c.created_at.strftime('%Y년 %m월 %d일 %H시 %M분') %></span>
               <p style="font-size: 21px; font-family: 'Nanum Pen Script', cursive;"><%= c.content %></p>
               <% if c.user.id == current_user.id %>
                 <div style="display: inline; float: right">

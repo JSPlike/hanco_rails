@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   
   #루트 경로
   root :to => "home#index"
+  get 'home/profile', to: 'home#profile', :as => :profile
 
   #devise 경로
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'},

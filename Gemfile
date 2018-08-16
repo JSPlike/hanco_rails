@@ -45,9 +45,13 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'rolify'     # role 관리
+gem 'authority'  # 권한설정
 
 # 계정 인증을 좀 더 안전하게
 gem 'figaro'
+
+gem 'letter_opener', :group => :development 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

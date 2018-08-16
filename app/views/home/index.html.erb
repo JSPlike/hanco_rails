@@ -15,6 +15,7 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
                         <ul class="dropdown-menu size-hc">
+                          <li><%= link_to "내 프로필", profile_path %></li>
                           <li class="project-a-color"><%= link_to "프로젝트", "/projects" %></li>
                           <li><%= link_to "정보수정", edit_user_registration_path %></li>
                           <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
@@ -22,7 +23,6 @@
                       </li>
                     <% else %>
                       <li class="signup-btn-color-hc-1"><%= link_to "Log In", new_user_session_path %></li>
-
                       <li class="signup-btn-color-hc-2"><%= link_to "Sign Up", new_user_registration_path %></li>
                     <% end %>
                 </ul>
