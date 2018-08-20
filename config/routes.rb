@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   #projects 경로
   resources :projects
 
-  
-  
   #posts 경로
-  resources :posts, except: [:show] do
+  resources :posts do
     post "/like", to: "likes#like_toggle"
 
     #댓글기능 라우팅
@@ -22,9 +20,11 @@ Rails.application.routes.draw do
 
   #devise 경로
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'},
-  
-  path: 'users',
-  path_name: {sign_in: 'login', sign_out: 'logout'}
+    path: 'users',
+    path_name: {sign_in: 'login', sign_out: 'logout'}
+
+
+
 
   #register 경로
   get 'register/info', to: 'register#info', as: 'register_info'

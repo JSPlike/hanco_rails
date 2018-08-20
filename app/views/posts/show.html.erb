@@ -12,6 +12,9 @@
 
 <p>
   <strong>Image:</string>
+	<% if @post.image.url %>
+    <img src="<%= post.image.url %>" style="width: 380px; height: auto">
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

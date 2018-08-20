@@ -11,6 +11,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @post }
+    end
   end
 
   # GET /posts/new
@@ -21,7 +27,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     authorize_action_for @post
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -45,10 +51,13 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     authorize_action_for @post
+    @post = Post.find(params[:id])
+
     respond_to do |format|
-      if @post.update(user_id: current_user.id, content: params[:content], image: params[:image])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+      if @post.update(user_id: @post.user_id, content: params[:content], image: params[:image])
+        # 내가 수정한 내용
+        logger.debug format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        logger.debug format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -61,6 +70,7 @@ class PostsController < ApplicationController
   def destroy
     authorize_action_for @post
     @post = Post.find(params[:id])
+
     @post.destroy
     respond_to do |format|
       format.html { redirect_to '/posts', notice: 'Post was successfully destroyed.' }

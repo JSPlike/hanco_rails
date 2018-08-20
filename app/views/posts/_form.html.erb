@@ -1,8 +1,9 @@
 <div class="card col s12">
   <div class="card-content" style="padding: 5em;">
     <div class="card-title">
-      <p>New Post</p>
+      <p style="font-size: 20px; ">New Post</p>
     </div><br />
+
     <%= simple_form_for @post, :html => { :multipart => true} do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -21,5 +22,6 @@
       </div><br>
 
     <% end %>
+
     </div>
 </div>

@@ -21,17 +21,15 @@
       <% else %>
         <%= link_to "좋아요", post_like_path(post), method: "post" %>
       <% end %>
-      <!-- 유저값을 확인하여 게시판을 쓴 유저라면 수정, 삭제버튼 확인 가능-->
-      <!--
-      <% if current_user.id == post.user.id %>
-        <%= link_to "삭제", post_path(post), method: "delete", class: "right" %>
-        <%= link_to "수정", edit_post_path(post), class: "right" %>
-      <% end %>
-      -->
+
+
+      <!-- 유저값을 확인하여 게시판을 쓴 유저이거나 관리자 계정이면  수정, 삭제버튼 확인 가능-->
+
       <% if user_signed_in? %>
-        <%= link_to icon('edit'), edit_post_path(post) if post.updatable_by? current_user %>&nbsp;
-        <%= link_to icon('trash'), post, method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
+        <%= link_to "삭제", post_path(post), method: :delete, class: "right", data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
+        <%= link_to "수정", edit_post_path(post), class: "right" if post.updatable_by? current_user %>
       <% end %>
+      
 
       <%= form_tag post_comments_path(post) do %>
         <div class="input-field">
