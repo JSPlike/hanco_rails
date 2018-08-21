@@ -1,31 +1,32 @@
 <div style="width: 70%">
 	<div class="card col s12">
-  <div class="card-content" style="padding: 5em;">
-    <div class="card-title">
-      <h3>Editing Post</h3>
-    </div><br />
+	  <div class="card-content" style="padding: 5em;">
+	    <div class="card-title">
+	      <h3>Editing Post</h3>
+	    </div><br />
 
-    <%= simple_form_for @post, :html => { :multipart => true} do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+	    <%= simple_form_for @post, :html => { :multipart => true} do |f| %>
+	      <%= f.error_notification %>
+	      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <div class="form-inputs">
-        <%= f.input :content, placeholder: "이야기를 적어주세요.."%>
-      </div>
+	      <div class="form-inputs">
+	        <%= f.input :content, placeholder: "이야기를 적어주세요.."%>
+	      </div>
 
-      <div class="field">
-        <%= f.label "Image" %>
-        <%= f.file_field :image %>
-      </div><br>
+	      <div class="field">
+	        <%= f.label "Image" %>
+	        <%= f.file_field :image %>
+	      </div><br>
 
-      <div class="form-actions">
-        <%= f.button :submit, class: "btn btn-success" %>
-      </div><br>
+	      <div class="form-actions">
+	        <%= f.button :submit, class: "btn btn-success" %>
+	      </div><br>
 
-    <% end %>
+	    <% end %>
 
-    </div>
-</div>
-
-	<%= link_to 'Back', posts_path %>
+	  </div>
+	</div>
+	<%= link_to posts_path do %>
+		<button>뒤로 가기</button>
+	<% end %>
 </div>
