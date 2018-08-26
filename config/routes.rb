@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   #projects 경로
   resources :projects
 
+
+  get 'projects/myproject' => 'projects#myproject'
+
   #posts 경로
   resources :posts do
     post "/like", to: "likes#like_toggle"
