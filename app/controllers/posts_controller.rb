@@ -50,11 +50,12 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+
     authorize_action_for @post
     @post = Post.find(params[:id])
 
     respond_to do |format|
-      if @post.update(user_id: @post.user_id, content: params[:content], image: params[:image])
+      if @post.update(user_id: @post.user_id, content: params[:post][:content], image: params[:post][:image])
         # 내가 수정한 내용
         logger.debug format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         logger.debug format.json { render :show, status: :ok, location: @post }
