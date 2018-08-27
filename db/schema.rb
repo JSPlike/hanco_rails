@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_140110) do
+ActiveRecord::Schema.define(version: 2018_08_27_103421) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2018_08_15_140110) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "participants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_participants_on_project_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -85,6 +94,9 @@ ActiveRecord::Schema.define(version: 2018_08_15_140110) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
@@ -103,5 +115,7 @@ ActiveRecord::Schema.define(version: 2018_08_15_140110) do
   end
 
   add_foreign_key "identities", "users"
+  add_foreign_key "participants", "projects"
+  add_foreign_key "participants", "users"
   add_foreign_key "posts", "users"
 end

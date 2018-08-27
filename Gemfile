@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 # mysql database 사용하기
 gem 'mysql2'
+# database 관리 url ~/rails_db
+gem 'rails_db'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -50,7 +52,6 @@ gem 'authority'  # 권한설정
 
 # 계정 인증을 좀 더 안전하게
 gem 'figaro'
-
 gem 'letter_opener', :group => :development 
 
 group :development, :test do
