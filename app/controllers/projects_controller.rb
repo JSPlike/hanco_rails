@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   
   def myproject
     # 나의 프로젝트 리스트를 불러들여야함
-    @projects = User.projects
+    @projects = current_user.projects
   end
   
   def invite # 함께할 파트너 초대
