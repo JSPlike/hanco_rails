@@ -2,10 +2,10 @@
 	<div style="width: 20%; margin-left: 40%; margin-right: 40%;">
 		<div class="card" style="margin-top: 50px; padding: 30px; border: 1px solid black; border-radius: 5px;">
 			<% unless current_user.avatar.url.nil? %>
-      	<div class="card-image">
-        	<img src="<%= current_user.avatar.url %>"  style="width: 10em; height: auto;"/>
-      	</div>
-      <% end %>
+				<div class="card-image">
+					<img src="<%= current_user.avatar.url %>"  style="width: 10em; height: auto;"/>
+				</div>
+			<% end %>
 
 			<div class="card-body">
 			  <h5 class="card-title">
