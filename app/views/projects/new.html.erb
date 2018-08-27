@@ -1,2 +1,5 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+<%=form_for(@project) do |f|%>
+    <%=f.text_field 'title'%>
+    <%=f.text_field 'project_kind'%>
+    <%=f.submit '만들기'%>
+<%end%>

@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   #projects 경로
   resources :projects
+  post 'projects/invite/:id' =>'projects#invite'
+  post 'projects/exit/:id' => 'projects#exit'
+
+
+
 
 
   get 'projects/myproject' => 'projects#myproject'
