@@ -3,5 +3,9 @@
   <h1>hello world</h1>
 </div>
 
-<a href='/projects/myproject'>프로젝트 페이지</a>
+<%@project.each do |p|%>
+  <%=link_to p.title, show_project_path(p.id)%><br>
+<%end%>
 
+<a href='/projects/myproject'>프로젝트 페이지</a>
+<%=link_to '프로젝트 만들기',new_project_path %>

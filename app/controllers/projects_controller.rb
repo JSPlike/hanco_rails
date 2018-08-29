@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @project = User.projects
+    @project = current_user.projects
   end
   
   def show
@@ -14,17 +14,55 @@ class ProjectsController < ApplicationController
   end
   
   def myproject
-    # 나의 프로젝트 리스트를 불러들여야함
-    @projects = current_user.projects
+    # 아직 용도를 모르겠음.
+    # @projects = current_user.projects
   end
   
-  def invite # 함께할 파트너 초대
-    receive = params[:email]
+  def invite # 함께할 파트너 초대 (파라미터 상대메일주소, 게시글번호 필요)
     
+    invite_user = User.where('email = ?',params[:email])
+    invite_key = ""
+    rd = Random.new
+
+    if !invite_user # 없는 유저라면
+      redirect_to '/' and return
+    end
+    
+    # 20개의 임의의 인증키를 만듬
+    while invite_key.length != 20
+      temp = rd.rand(48..122)
+      if (temp >= 48 && temp <=57) || (temp >=65 && temp<=90) || (temp>=97 && temp <=122)
+        invite_key+= temp.chr
+      else
+        next
+      end
+    end
+    Invite.create(
+      key: invite_key,
+      user_id: invite_user[0].id,
+      project_id: params[:id]
+    )
+    # 메일보내고 redirect
+
+  end
+
+  def join # 메일로 초대메일을 받았을때
+    if !params[:project_id] || !params[:key] || !params[:user_id]
+      redirect_to '/'
+    end
+
+
+    if current_user.id == params[:user_id]
+      Participant.create(
+        post_id: params[:proejct_id],
+        user_id: current_user.id        
+      )
+    end
+
   end
 
   def exit # 글쓴이가 아닌 사람이 게시글을 나갈시
-    participant = Participant.where('post_id = ? AND project_id = ?', parasm[:id], current_user.id)
+    participant = Participant.where('project_id = ? AND user_id = ?', parasm[:id], current_user.id)
     participant.destroy
 
 
@@ -54,7 +92,7 @@ class ProjectsController < ApplicationController
       user_id: current_user.id,
       project_id: project.id
     )
-    redirect_to projects_myproject_url(project.id)
+    redirect_to show_project_url(project.id)
   end
   
   private
