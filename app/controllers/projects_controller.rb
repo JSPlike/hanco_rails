@@ -2,9 +2,9 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @project = current_user.projects
+    temp = Project.last #임의 값
+    @participants = Participant.where('user_id = ?', current_user.id)
   end
-  
   def show
     project_find
   end
@@ -20,8 +20,7 @@ class ProjectsController < ApplicationController
   
   def invite # 함께할 파트너 초대 (파라미터 상대메일주소, 게시글번호 필요)
     
-    invite_user = User.where('email = ?',params[:email])
-    invite_user = invite_user[0]
+    invite_user = User.where('email = ?',params[:email])[0]
     invite_key = ""
     rd = Random.new
 
@@ -62,17 +61,19 @@ class ProjectsController < ApplicationController
       redirect_to '/' and return
     end 
 
-    invite_data = Invite.where('user_id = ? AND project_id =?', params[:user_id].to_i, params[:project_id].to_i)[0]
-  
-    #연결된 유저가 링크에 파라미터와 같은지 확인하고, 초대키가 데이터베이스에 저장된 키와 같은지 검증한다.
-    if (current_user.id == params[:user_id]) && (invite_data.temp_key == params[:key])
+    invite_data = Invite.where('user_id = ? AND project_id = ? AND temp_key = ?', params[:user_id].to_i, params[:project_id].to_i, params[:key])[0]
+    if invite_data
       Participant.create(
         project_id: params[:project_id],
         user_id: current_user.id     
       )
       invite_data.destroy 
+    else
+      flash[:notice] = '잘못된 접근입니다.'
+      redirect_to '/' and return
     end
-    redirect_to '/'
+    flash[:notice] = '참여완료'
+    redirect_to '/' and return
   end
 
   def exit # 글쓴이가 아닌 사람이 게시글을 나갈시
@@ -110,6 +111,7 @@ class ProjectsController < ApplicationController
   end
   
   private
+
     def project_params
       params.require(:project).permit(:title, :project_kind);
     end
