@@ -21,10 +21,11 @@ class ProjectsController < ApplicationController
   def invite # 함께할 파트너 초대 (파라미터 상대메일주소, 게시글번호 필요)
     
     invite_user = User.where('email = ?',params[:email])
+    invite_user = invite_user[0]
     invite_key = ""
     rd = Random.new
 
-    if !invite_user # 없는 유저라면
+    if !invite_user # 없는 유저라면 메시지 추가필요
       redirect_to '/' and return
     end
     
@@ -37,28 +38,41 @@ class ProjectsController < ApplicationController
         next
       end
     end
+    
+    # 기존에 초대명단이 있으면 가장 마지막 메일이 유효하다. alert 필요
+    invites = Invite.where('user_id = ? AND project_id = ?', invite_user.id, params[:id])
+    invites.each do |i|
+      i.destroy
+    end
+
     Invite.create(
-      key: invite_key,
-      user_id: invite_user[0].id,
+      temp_key: invite_key,
+      user_id: invite_user.id,
       project_id: params[:id]
     )
+
+    WebmailMailer.invite_email_send(current_user.email,invite_user.email, Invite.last).deliver_now
     # 메일보내고 redirect
+    redirect_to '/'
 
   end
 
   def join # 메일로 초대메일을 받았을때
     if !params[:project_id] || !params[:key] || !params[:user_id]
-      redirect_to '/'
-    end
+      redirect_to '/' and return
+    end 
 
-
-    if current_user.id == params[:user_id]
+    invite_data = Invite.where('user_id = ? AND project_id =?', params[:user_id].to_i, params[:project_id].to_i)[0]
+  
+    #연결된 유저가 링크에 파라미터와 같은지 확인하고, 초대키가 데이터베이스에 저장된 키와 같은지 검증한다.
+    if (current_user.id == params[:user_id]) && (invite_data.temp_key == params[:key])
       Participant.create(
-        post_id: params[:proejct_id],
-        user_id: current_user.id        
+        project_id: params[:project_id],
+        user_id: current_user.id     
       )
+      invite_data.destroy 
     end
-
+    redirect_to '/'
   end
 
   def exit # 글쓴이가 아닌 사람이 게시글을 나갈시

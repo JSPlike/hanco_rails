@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'projects/show/:id' => 'projects#show', as: 'show_project'
   post 'projects/invite/:id' =>'projects#invite', as: 'invite_project'
   post 'projects/exit/:id' => 'projects#exit'
-  post 'projects/join' => 'projects#join', as:'join_project'
+  get 'projects/join/:project_id&:key&:user_id' => 'projects#join', as: 'join_project' 
   get 'projects/myproject'
 
   #posts 경로
