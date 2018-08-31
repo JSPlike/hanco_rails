@@ -2,9 +2,9 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @project = User.projects
+    temp = Project.last #임의 값
+    @participants = Participant.where('user_id = ?', current_user.id)
   end
-  
   def show
     project_find
   end
@@ -14,17 +14,70 @@ class ProjectsController < ApplicationController
   end
   
   def myproject
-    # 나의 프로젝트 리스트를 불러들여야함
-    @projects = current_user.projects
+    # 아직 용도를 모르겠음.
+    # @projects = current_user.projects
   end
   
-  def invite # 함께할 파트너 초대
-    receive = params[:email]
+  def invite # 함께할 파트너 초대 (파라미터 상대메일주소, 게시글번호 필요)
     
+    invite_user = User.where('email = ?',params[:email])[0]
+    invite_key = ""
+    rd = Random.new
+
+    if !invite_user # 없는 유저라면 메시지 추가필요
+      redirect_to '/' and return
+    end
+    
+    # 20개의 임의의 인증키를 만듬
+    while invite_key.length != 20
+      temp = rd.rand(48..122)
+      if (temp >= 48 && temp <=57) || (temp >=65 && temp<=90) || (temp>=97 && temp <=122)
+        invite_key+= temp.chr
+      else
+        next
+      end
+    end
+    
+    # 기존에 초대명단이 있으면 가장 마지막 메일이 유효하다. alert 필요
+    invites = Invite.where('user_id = ? AND project_id = ?', invite_user.id, params[:id])
+    invites.each do |i|
+      i.destroy
+    end
+
+    Invite.create(
+      temp_key: invite_key,
+      user_id: invite_user.id,
+      project_id: params[:id]
+    )
+
+    WebmailMailer.invite_email_send(current_user.email,invite_user.email, Invite.last).deliver_now
+    # 메일보내고 redirect
+    redirect_to '/'
+
+  end
+
+  def join # 메일로 초대메일을 받았을때
+    if !params[:project_id] || !params[:key] || !params[:user_id]
+      redirect_to '/' and return
+    end 
+
+    invite_data = Invite.where('user_id = ? AND project_id = ? AND temp_key = ?', params[:user_id].to_i, params[:project_id].to_i, params[:key])[0]
+    if invite_data
+      Participant.create(
+        project_id: params[:project_id],
+        user_id: current_user.id     
+      )
+      invite_data.destroy 
+    else
+      flash[:notice] = '잘못된 접근입니다.'
+      redirect_to '/' and return
+    end
+    flash[:notice] = '참여완료'
+    redirect_to '/' and return
   end
 
   def exit # 글쓴이가 아닌 사람이 게시글을 나갈시
-    participant = Participant.where('post_id = ? AND project_id = ?', parasm[:id], current_user.id)
+    participant = Participant.where('project_id = ? AND user_id = ?', parasm[:id], current_user.id)
     participant.destroy
 
 
@@ -54,10 +107,11 @@ class ProjectsController < ApplicationController
       user_id: current_user.id,
       project_id: project.id
     )
-    redirect_to projects_myproject_url(project.id)
+    redirect_to show_project_url(project.id)
   end
   
   private
+
     def project_params
       params.require(:project).permit(:title, :project_kind);
     end

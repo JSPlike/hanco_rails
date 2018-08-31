@@ -115,3 +115,11 @@
     </div>
   </div>
 </div>
+
+
+임시
+초대하기<br>
+<%= form_tag(invite_project_path(params[:id])) do%>
+  이메일 입력 : <%=text_field_tag 'email'%>
+  <%=submit_tag '제출'%>
+<%end%>

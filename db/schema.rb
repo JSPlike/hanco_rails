@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_103421) do
+ActiveRecord::Schema.define(version: 2018_08_29_110956) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 2018_08_27_103421) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_identities_on_user_id"
+  end
+
+  create_table "invites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "temp_key"
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_invites_on_project_id"
+    t.index ["user_id"], name: "index_invites_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -115,6 +125,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_103421) do
   end
 
   add_foreign_key "identities", "users"
+  add_foreign_key "invites", "projects"
+  add_foreign_key "invites", "users"
   add_foreign_key "participants", "projects"
   add_foreign_key "participants", "users"
   add_foreign_key "posts", "users"

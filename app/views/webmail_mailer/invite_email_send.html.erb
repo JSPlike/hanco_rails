@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>
+      <p>
+      그룹에 초대 되었습니다. 하단 버튼을 클릭해서 수락하십시오.
+    </p>
+    <%=link_to join_project_url(project_id = @invite.project_id, key=@invite.temp_key, user_id = @invite.user_id) do%>
+        <%button_tag '클릭'%>
+    <%end%>
+  </body>
+</html>
+
