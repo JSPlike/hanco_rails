@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
+
 gem 'rails', '~> 5.2.0'
 # mysql database 사용하기
 gem 'mysql2'
@@ -22,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# application.yml파일 git에 업로드되지않게 도와줌. bundle exec figaro install
+gem 'figaro'
 
 # jquery-rails 사용
 gem 'jquery-rails'
