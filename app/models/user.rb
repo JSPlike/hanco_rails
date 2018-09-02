@@ -52,7 +52,7 @@ class User < ApplicationRecord
 
         user = User.new(
           name: auth.info.name || auth.extra.nickname ||  auth.uid,
-          email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+          email: email ? email : "#{auth.info.email}",
           password: Devise.friendly_token[0,20]
         )
         user.skip_confirmation!
