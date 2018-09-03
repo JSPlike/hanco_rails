@@ -1,7 +1,7 @@
-<div class="card col s12">
+<div class="card col s12 new-post-hc">
   <div class="card-content" style="padding: 5em;">
     <div class="card-title">
-      <p style="font-size: 20px; ">New Post</p>
+      <p style="font-size: 20px; ">새 게시물</p>
     </div><br />
 
     <%= simple_form_for @post, :html => { :multipart => true} do |f| %>
@@ -18,7 +18,7 @@
       </div><br>
 
       <div class="form-actions">
-        <%= f.button :submit, class: "btn btn-success" %>
+        <%= f.button :submit, class: "btn btn-success"%>
       </div><br>
 
     <% end %>
