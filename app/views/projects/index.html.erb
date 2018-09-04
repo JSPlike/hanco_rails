@@ -3,10 +3,5 @@
   <h1>hello world</h1>
 </div>
 
-<%@participants.each do |p|%>
-  <%temp = Project.find(p.project_id)%>
-  <%=link_to temp.title, show_project_path(temp.id)%><br>
-<%end%>
-
 <a href='/projects/myproject'>프로젝트 페이지</a>
 <%=link_to '프로젝트 만들기',new_project_path %>

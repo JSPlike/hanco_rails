@@ -2,8 +2,6 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    temp = Project.last #임의 값
-    @participants = Participant.where('user_id = ?', current_user.id)
   end
   def show
     project_find
@@ -14,6 +12,8 @@ class ProjectsController < ApplicationController
   end
   
   def myproject
+    temp = Project.last #임의 값
+    @participants = Participant.where('user_id = ?', current_user.id)
     # 아직 용도를 모르겠음.
     # @projects = current_user.projects
   end

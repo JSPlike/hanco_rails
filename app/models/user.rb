@@ -52,7 +52,8 @@ class User < ApplicationRecord
 
         user = User.new(
           name: auth.info.name || auth.extra.nickname ||  auth.uid,
-          email: email ? email : "#{auth.info.email}",
+          # email: email ? email : "#{auth.info.email}",
+          email: auth.info.email,
           password: Devise.friendly_token[0,20]
         )
         user.skip_confirmation!
