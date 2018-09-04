@@ -21,22 +21,8 @@
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
   </head>
   <body>
-    <div id="load">
-	     <%= image_tag('loading.gif', alt: "loading...") %>
-    </div>
-
-    <%= yield %>
-
-    <!--  ajax 부분 수정하기 -->
-    <script>
-      $(document).ready(function(){
-        // hide spinner
-
-        $("#load").fadeOut();
-        setTimeout(function(){
-            $loading.hide();
-        },1000);
-      });
-    </script>
+    <container>
+        <%= yield %>
+    </container>  
   </body>
 </html>
