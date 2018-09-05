@@ -1,7 +1,91 @@
+<%# 동적폼 생성을 위한 폼태그 %>
+<%=form_tag projects_create_path, :name => "resultHiddenForm" do%>
+<%end%>
 
-<div>
-  <h1>hello world</h1>
+<button id="myBtn">개인 프로젝트</button>
+<button id="myBtn2">팀 프로젝트</button>
+ 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+        <div style="text-align:center;">                                                           
+            이름<br><input type="text" id="title"><br>
+            프로젝트 설명<br><textarea id="description"></textarea><br>
+            <input id="newProject" type="button" value="생성" onclick="">
+        </div>
+  </div>
+
 </div>
 
+
+
+
+
 <a href='/projects/myproject'>프로젝트 페이지</a>
-<%=link_to '프로젝트 만들기',new_project_path %>
+
+
+<script>
+  // Get the modal
+  var projectkind = 0;
+
+  var modal = document.getElementById('myModal');
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  var btn2 = document.getElementById("myBtn2");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];                                          
+
+  // When the user clicks on the button, open the modal 
+  btn.onclick = function() {
+      modal.style.display = "block";
+      projectkind = 1;
+  }
+  btn2.onclick = function(){
+      modal.style.display = "block";
+      projectkind = 2;
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+  newProject.onclick = function(){
+      //목적지는 create title과 project_kind 보내야함
+
+    var title = document.getElementById("title").value;
+    var desc = document.getElementById("description").value;
+    var form = document.resultHiddenForm;
+    var hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "title");
+    hiddenField.setAttribute("value", title);
+    form.appendChild(hiddenField);
+
+    hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "desc");
+    hiddenField.setAttribute("value", desc);
+    form.appendChild(hiddenField);
+
+    hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", "project_kind");
+    hiddenField.setAttribute("value", projectkind);
+    form.appendChild(hiddenField);
+
+    form.submit();
+
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+</script>
+

@@ -6,11 +6,7 @@ class ProjectsController < ApplicationController
   def show
     project_find
   end
-  
-  def new
-    @project = Project.new
-  end
-  
+
   def myproject
     temp = Project.last #임의 값
     @participants = Participant.where('user_id = ?', current_user.id)
@@ -117,7 +113,7 @@ class ProjectsController < ApplicationController
   private
 
     def project_params
-      params.require(:project).permit(:title, :project_kind);
+      params.permit(:title, :project_kind)
     end
     def project_find # 해당 프로젝트 게시글을 찾아옴.
       @project = Project.find(params[:id].to_i)

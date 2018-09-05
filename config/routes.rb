@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post 'projects/exit/:id' => 'projects#exit'
   get 'projects/join/:project_id&:key&:user_id' => 'projects#join', as: 'join_project' 
   get 'projects/myproject'
+  post 'projects/create'
+  
   #posts 경로
   resources :posts do
     post "/like", to: "likes#like_toggle"
