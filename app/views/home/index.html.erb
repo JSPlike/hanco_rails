@@ -1,3 +1,15 @@
+<style type="text/css">
+
+.dropdown:hover {
+    background-color: #F2F2F2;
+}
+.nav-inner-hc-ul-1 li:hover {
+    background-color: #F2F2F2;
+    color: black;
+}
+
+</style>
+
 <div id="container">
     <div class="container-1">
         <div class="nav-hc">
@@ -13,8 +25,9 @@
                 <ul class="nav navbar-nav navbar-right nav-inner-hc-ul-2">
                     <% if user_signed_in? %>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
-                        <ul class="dropdown-menu size-hc">
+                        <a href="#" class="dropdown-toggle name-color-hc" data-toggle="dropdown" style="color: #6E6E6E;"><%= current_user.name %> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu size-hc">    
                           <li><%= link_to "내 프로필", profile_path %></li>
                           <li class="project-a-color"><%= link_to "프로젝트", "/projects" %></li>
                           <li><%= link_to "정보수정", edit_user_registration_path %></li>
@@ -76,16 +89,32 @@
 <script>
     $(window).scroll(function() {
     if($(this).scrollTop() < 70)
+        $('.nav-inner-hc-ul-2 li .name-color-hc').css('color', '#6E6E6E'),
         $('.nav-hc').css('background-color', 'transparent'),
         $('.nav-hc h1').css('color', 'black'),
         $('.nav-inner-hc-ul-1 a').css('color', '#0489B1'),
+
+        $('.nav-inner-hc-u1-1 li').hover(function() {
+            $(this).css('color', 'black');
+        },function() {
+            $(this).css('background-color', '#F2F2F2');
+        }),
+        
         $('.signup-btn-color-hc-2 a').css('color', '#2E64FE'),
         //$('.nav-inner-hc-ul-2 a').css('color', '#8258FA'),
         $('.nav-hc').css('opacity', '1');
     else
+        $('.nav-inner-hc-ul-2 li .name-color-hc').css('color', '#D8D8D8'),
         $('.nav-hc').css('background-color', '#585858'),
         $('.nav-hc h1').css('color', '#ffffff'),
         $('.nav-inner-hc-ul-1 a').css('color', '#819FF7'),
+
+        $('.nav-inner-hc-u1-1 li').hover(function() {
+            $(this).css('color', 'black');
+        },function() {
+            $(this).css('background-color', '#F2F2F2');
+        }),
+
         $('.signup-btn-color-hc-2 a').css('color', '#81BEF7'),
         $('.nav-inner-hc-u1-1 a:hover').css('color', 'black'),
         //$('.nav-inner-hc-u1-2 a:hover').css('color', 'black'),
