@@ -18,7 +18,7 @@
                           <li><%= link_to "내 프로필", profile_path %></li>
                           <li class="project-a-color"><%= link_to "프로젝트", "/projects" %></li>
                           <li><%= link_to "정보수정", edit_user_registration_path %></li>
-                          <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+                          <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete %></li>
                         </ul>
                       </li>
                     <% else %>
