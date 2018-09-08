@@ -1,5 +1,13 @@
+<div style="padding-top: 5%; padding-left: 20%">
   내 프로젝트 리스트<br>
-  <%@participants.each do |p|%>
-    <%temp = Project.find(p.project_id)%>
-    <%=link_to temp.title, show_project_path(temp.id)%><br>
-  <%end%>
+  <table class="table">
+    <%@participants.each do |p|%>
+      <%temp = Project.find(p.project_id)%>
+      <tr onclick="<%=show_project_path(temp.id)%>">
+        <td><%=temp.title %></td>
+        <td>ㅎㅇ</td>
+        <td>ㅎㅇ</td>
+      </tr>
+    <%end%>
+  </table>
+</div>

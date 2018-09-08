@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_110956) do
     t.bigint "user_id"
     t.text "title"
     t.integer "project_kind"
+    t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
