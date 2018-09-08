@@ -53,6 +53,7 @@ class ProjectsController < ApplicationController
     Invite.create(
       temp_key: invite_key,
       user_id: invite_user.id,
+      
       project_id: params[:id].to_i
     )
 
@@ -113,7 +114,7 @@ class ProjectsController < ApplicationController
   private
 
     def project_params
-      params.permit(:title, :project_kind)
+      params.permit(:title, :project_kind, :desc)
     end
     def project_find # 해당 프로젝트 게시글을 찾아옴.
       @project = Project.find(params[:id].to_i)
