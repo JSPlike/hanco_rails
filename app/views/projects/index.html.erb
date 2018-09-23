@@ -1,32 +1,36 @@
 <%# 동적폼 생성을 위한 폼태그 %>
-<%=form_tag projects_create_path, :name => "resultHiddenForm" do%>
-<%end%>
 
-<button id="myBtn">개인 프로젝트</button>
-<button id="myBtn2">팀 프로젝트</button>
- 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<div class="container-fluid">
+  <div class="vertical-grid-hc">
+    <div class="horizon-grid-hc">
+      <%=form_tag projects_create_path, :name => "resultHiddenForm" do%>
+      <%end%>
+      <button id="btn-1" class="individual-project">ME</button>
+      <button id="btn-2" class="team-project">WE</button>
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-        <div style="text-align:center;">                                                           
-            프로젝트 이름<br><input type="text" class="form-control" id="title">
-            프로젝트 설명<br><textarea  class="form-control" id="description"></textarea><br>
-            <input id="newProject" class="btn btn-default" type="button" value="생성" onclick="">
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div>                                                           
+            <label>Name</label>
+            <br>
+            <input type="text" class="form-control" id="title">
+            <br>
+            <label>Description</label>
+            <br>
+            <textarea  class="form-control" id="description"></textarea><br>
+            <input id="newProject" class="btn btn-primary" type="button" value="프로젝트 생성하기" onclick="">
+          </div>
         </div>
+      </div>
+    </div>
   </div>
-
+  <a href='/projects/myproject'>프로젝트 페이지</a>
 </div>
-
-
-
-
-
-<a href='/projects/myproject'>프로젝트 페이지</a>
-
-
 <script>
   // Get the modal
   var projectkind = 0;
@@ -34,8 +38,8 @@
   var modal = document.getElementById('myModal');
 
   // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-  var btn2 = document.getElementById("myBtn2");
+  var btn = document.getElementById("btn-1");
+  var btn2 = document.getElementById("btn-2");
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];                                          

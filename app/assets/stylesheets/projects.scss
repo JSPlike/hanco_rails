@@ -1,6 +1,61 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*
+* index.html 부분 css
+*/
+
+.container-fluid {
+  display: block;
+}
+
+.vertical-grid-hc {
+}
+.horizon-grid-hc {
+  text-align: center;
+  padding: 100px;
+}
+
+.individual-project {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  font-size: 50px;
+  font-family: 'Permanent Marker', cursive;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.team-project {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  font-size: 50px;
+  font-family: 'Permanent Marker', cursive;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.individual-project:hover{
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: #424242;
+  color: white;
+  opacity: 0.7;
+}
+.team-project:hover{
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  background-color: #424242;
+  color: white;
+  opacity: 0.7;
+}
+
+
 .nav {
   .project-a-color a {
     color: #04B486;
