@@ -36,7 +36,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">프로필 파트</a>
+          
         </li>
 
         <% if user_signed_in? %>
@@ -63,15 +63,12 @@
         </li>
       </ul>
     </div>
-    <div class="project-container-hc">
-      
-      
-      <%= yield %>
+
+    <div class="wrapper-hc">
+      <%= yield %> 
     </div>
-
-    <script>
-    
+    <script type="text/javascript">
+      
     </script>
-
   </body>
 </html>
