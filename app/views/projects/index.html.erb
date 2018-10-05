@@ -1,6 +1,6 @@
 <%# 동적폼 생성을 위한 폼태그 %>
 
-<div class="container-fluid">
+<div class="container-fluid" style="height: 100%;">
   <div class="vertical-grid-hc">
     <div class="horizon-grid-hc">
       <%=form_tag projects_create_path, :name => "resultHiddenForm" do%>
@@ -29,7 +29,9 @@
       </div>
     </div>
   </div>
-  <a href='/projects/myproject'>프로젝트 페이지</a>
+  <div style="text-align: center;">
+    <a href='/projects/myproject'><button class="btn btn-success">내 프로젝트 페이지</button></a>
+  </div>
 </div>
 <script>
   // Get the modal
